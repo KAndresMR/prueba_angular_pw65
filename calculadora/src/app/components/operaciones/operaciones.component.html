@@ -18,7 +18,7 @@
                 </div>
                 <!-- Campo para la descripción del tarea -->
                 <div>
-                    <label for="description">Ingrese el primer numero:</label><br>
+                    <label for="description">Ingrese el segundo numero:</label><br>
                     <input class="input-field" type="number" id="description" name="description-name" [(ngModel)] = "secondNumber">
                 </div>
                 <button type="submit" class="btnSum" (click)="sumar()">Sumar</button>
@@ -26,11 +26,7 @@
                 <button type="submit" class="btnMulti" (click)="multiplicar()">Multiplicar</button>
                 <button type="submit" class="btnDiv" (click)="dividir()">Dividir</button>
                 <br />
-                <label for="">Resultado de operacion: {{result}}</label>
-
-
-
-
+                <label for="">Resultado: {{result}}</label>
                 <ul>
                     <li *ngFor = "let rest of results; let i = index">
                         <strong>Resultado de la operacion: {{rest.numero}}</strong>: 
