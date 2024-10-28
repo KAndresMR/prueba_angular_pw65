@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones basicas</title>
+</head>
+<body>
+    <!-- Contenido de la página de agregar tarea -->
+    <main>
+        <section id="add-task">
+            <h1>Operaciones basicas</h1>
+            <form (ngSubmit)="onSubmit()" id="add-task-form" #cursoForm="ngForm">
+                <!-- Campo para el nombre de la tarea -->
+                <div>
+                    <label for="task-name">Ingrese el primer numero:</label><br>
+                    <input class="input-field" type="number" id="nameTask" name="task-name" [(ngModel)] = "firstNumber">
+                </div>
+                <!-- Campo para la descripción del tarea -->
+                <div>
+                    <label for="description">Ingrese el primer numero:</label><br>
+                    <input class="input-field" type="number" id="description" name="description-name" [(ngModel)] = "secondNumber">
+                </div>
+                <button type="submit" class="btnSum" (click)="sumar()">Sumar</button>
+                <button type="submit" class="btnRest" (click)="restar()">Restar</button>
+                <button type="submit" class="btnMulti" (click)="multiplicar()">Multiplicar</button>
+                <button type="submit" class="btnDiv" (click)="dividir()">Dividir</button>
+                <br />
+                <label for="">Resultado de operacion: {{result}}</label>
+
+
+
+
+                <ul>
+                    <li *ngFor = "let rest of results; let i = index">
+                        <strong>Resultado de la operacion: {{rest.numero}}</strong>: 
+                        <button (click)="eliminar(i)">Eliminar</button>
+                    </li>
+                </ul>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
